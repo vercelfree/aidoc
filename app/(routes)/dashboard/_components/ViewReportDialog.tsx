@@ -190,6 +190,8 @@
 
 
 
+
+
 import React from "react";
 import {
   Dialog,
@@ -200,11 +202,45 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { SessionDetail } from "../medical-agent/[sessionId]/page";
 import moment from "moment";
 
+// Define the Report type based on your data structure
+type Report = {
+  agent: string;
+  chiefComplaint: string;
+  duration: string;
+  medicationsMentioned: string[];
+  recommendations: string[];
+  sessionId: string;
+  severity: string;
+  summary: string;
+  symptoms: string[];
+  timestamp: string;
+  user: string;
+};
+
+// Define the doctorAgent type (you may need to adjust this based on your actual type)
+type doctorAgent = {
+  specialist: string;
+  // Add other properties as needed
+};
+
+// Update SessionDetail type with proper Report type
+export type SessionDetail = {
+  id: number;
+  notes: string;
+  sessionId: string;
+  report: Report; // Changed from JSON to Report
+  selectedDoctor: doctorAgent;
+  createdOn: string;
+  conversation?: Array<{
+    role: string;
+    text: string;
+  }>;
+};
+
 type Props = {
-  record: SessionDetail;  // Update type here
+  record: SessionDetail;
 };
 
 function ViewReportDialog({ record }: Props) {
@@ -327,7 +363,7 @@ function ViewReportDialog({ record }: Props) {
                 </div>
               </div>
 
-              {record.conversation?.length > 0 && (
+              {record.conversation && record.conversation.length > 0 && (
                 <div className="mt-6">
                   <h2 className="font-bold text-blue-500 text-lg">
                     Conversation History:
