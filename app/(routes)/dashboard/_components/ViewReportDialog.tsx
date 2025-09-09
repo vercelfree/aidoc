@@ -191,7 +191,6 @@
 
 
 
-
 import React from "react";
 import {
   Dialog,
@@ -219,24 +218,27 @@ type Report = {
   user: string;
 };
 
-// Define the doctorAgent type (you may need to adjust this based on your actual type)
-type doctorAgent = {
+// Define the doctorAgent type
+type DoctorAgent = {
   specialist: string;
   // Add other properties as needed
 };
 
-// Update SessionDetail type with proper Report type
-export type SessionDetail = {
+// Define the conversation message type
+type ConversationMessage = {
+  role: string;
+  text: string;
+};
+
+// Define the main SessionDetail type
+type SessionDetail = {
   id: number;
   notes: string;
   sessionId: string;
-  report: Report; // Changed from JSON to Report
-  selectedDoctor: doctorAgent;
+  report: Report;
+  selectedDoctor: DoctorAgent;
   createdOn: string;
-  conversation?: Array<{
-    role: string;
-    text: string;
-  }>;
+  conversation?: ConversationMessage[];
 };
 
 type Props = {
