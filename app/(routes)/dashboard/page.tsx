@@ -40,7 +40,7 @@ function Dashboard() {
   const [reportCount, setReportCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [totalSessions, setTotalSessions] = useState(0);
-  const MAX_REPORTS = 15;
+  const MAX_REPORTS = 5;
 
   useEffect(() => {
     checkReportCount();
@@ -268,5 +268,6 @@ function Dashboard() {
     </div>
   );
 }
+
 
 export default Dashboard;
