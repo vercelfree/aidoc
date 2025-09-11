@@ -248,7 +248,7 @@ function ViewReportDialog({ record }: Props) {
                 )}
 
                 {record.report?.recommendations?.length > 0 && (
-                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200">
+                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 w-[450px] border border-amber-200">
                     <div className="flex items-center space-x-3 mb-4">
                       <div className="p-2 bg-amber-500 rounded-lg">
                         <FileText className="w-5 h-5 text-white" />
@@ -335,5 +335,6 @@ function ViewReportDialog({ record }: Props) {
     </Dialog>
   );
 }
+
 
 export default ViewReportDialog;
