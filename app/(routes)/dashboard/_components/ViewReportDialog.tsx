@@ -336,5 +336,4 @@ function ViewReportDialog({ record }: Props) {
   );
 }
 
-
 export default ViewReportDialog;

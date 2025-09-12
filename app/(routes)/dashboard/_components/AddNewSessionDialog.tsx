@@ -346,5 +346,4 @@ function AddNewSessionDialog() {
   );
 }
 
-
 export default AddNewSessionDialog;

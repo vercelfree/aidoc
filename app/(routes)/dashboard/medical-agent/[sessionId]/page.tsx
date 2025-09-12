@@ -234,7 +234,7 @@ function MedicalVoiceAgent() {
       <div className="max-w-4xl mx-auto">
         {/* Header Card */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 mb-6">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center">
             {/* Connection Status */}
             <div className={`flex items-center space-x-3 px-4 py-2 rounded-full border-2 transition-all duration-300 ${
               callStarted 
@@ -265,7 +265,7 @@ function MedicalVoiceAgent() {
             </div>
 
             {/* Call Duration */}
-            <div className="flex items-center space-x-2 text-xl font-mono font-bold text-gray-700">
+            <div className="flex mt-5 items-center space-x-2 text-xl font-mono font-bold text-gray-700 lg:mt-0">
               <Clock className="w-5 h-5 text-blue-600" />
               <span className={callStarted ? 'text-green-600' : 'text-gray-400'}>
                 {formatTime(callDuration)}
@@ -280,8 +280,8 @@ function MedicalVoiceAgent() {
             <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-8 text-white relative overflow-hidden">
               {/* Background pattern */}
               <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-4 right-4 w-32 h-32 border-2 border-white rounded-full"></div>
-                <div className="absolute bottom-4 left-4 w-24 h-24 border-2 border-white rounded-full"></div>
+                <div className="absolute top-4 right-4 w-32 h-32 lg:border-2 border-white rounded-full"></div>
+                <div className="absolute bottom-4 left-4 w-24 h-24 lg:border-2 border-white rounded-full"></div>
               </div>
               
               <div className="relative z-10 flex items-center flex-col text-center">
@@ -451,7 +451,7 @@ function MedicalVoiceAgent() {
               <div className="mt-8 flex justify-center">
                 {!callStarted ? (
                   <Button 
-                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-lg"
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm lg:text-lg"
                     onClick={StarCall} 
                     disabled={loading}
                     size="lg"
